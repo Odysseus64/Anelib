@@ -1,4 +1,4 @@
-package plasma.service;
+package plasma.service.meta;
 
 import plasma.model.Profile;
 
