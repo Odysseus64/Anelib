@@ -12,10 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HomeController {
 
-    @GetMapping("/home/")
+    /*@GetMapping("/home/")
     public String main(Model model){
         List<Settings> profiles = service.findAll();
         model.addAttribute("page", profiles);
         return "";
-    }
+    }*/
 }
