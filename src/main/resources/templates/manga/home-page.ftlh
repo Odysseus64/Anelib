@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--    <link rel="stylesheet" href="home-page.css">-->
-    <script src="/static/clock.js"></script>
+    <script src="/clock.js"></script>
     <title>Aneon</title>
 </head>
 <body>
@@ -21,7 +21,6 @@
         <li>
             <form>
                 <input type="search" placeholder="Поиск" id="search-manga">
-                <input type="submit" value="GO">
             </form>
         </li>
         <li>
@@ -55,7 +54,24 @@
         <li>
             <div id="clock"></div>
         </li>
+        <li>
+            <a href=""><button value="ADD"></button></a>
+        </li>
     </ol>
+</div>
+<div>
+    <#list page as go>
+        <div>
+            <img src="Sasha.png" alt="">
+            <div>
+                <a href="#"><p>Name: ${go.name}</p></a>
+                <a href="#"><p>Type: ${go.type}</p></a>
+                <a href="#"><p>Desc: ${go.description}</p></a>
+                <a href="#"><p>Genre: ${go.genre}</p></a>
+                <a href="#"><p>More</p></a>
+            </div>
+        </div>
+    </#list>
 </div>
 </body>
 </html>
