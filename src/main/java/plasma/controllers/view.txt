@@ -13,7 +13,11 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class CompanyController {
+
+
     private final CompanyService service;
+
+
     //'MAIN' DELETE, UPDATE, FIND ALL
     @GetMapping("/company/main")
     public String main(Model model){
@@ -21,24 +25,36 @@ public class CompanyController {
         model.addAttribute("main",companies);
         return "/company/view-company";
     }
+
+
+
     //SAVE
     @GetMapping("/company/save")
     public String save(Model model){
         model.addAttribute("save", new Company());
         return "/company/create-company";
     }
+
+
+
     //RETURN SAVE TO MAIN
     @PostMapping("/company/save")
     public String saveProduct(Company company) {
         service.save(company);
         return "redirect:/company/main";
     }
+
+
+
     //DELETE ELEMENT BY ID
     @PostMapping("/company/delete/{id}")
     public String delete(@PathVariable("id") Long id){
         service.deleteById(id);
         return "redirect:/company/main";
     }
+
+
+
     //VIEW EDIT
     @GetMapping("/company/edit/{id}")
     public String showEdit(@PathVariable("id") Long id, Model model){
@@ -46,6 +62,8 @@ public class CompanyController {
         model.addAttribute("get", company);
         return "/company/update-company";
     }
+
+
     //EDITING
     @PostMapping("/company/edit/{id}")
     public String edit(@PathVariable("id") Long id,
@@ -53,4 +71,6 @@ public class CompanyController {
         service.update(id,company);
         return "redirect:/company/main";
     }
+
+
 }

@@ -3,10 +3,7 @@ package plasma.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import plasma.model.Manga;
 import plasma.service.MangaService;
 
@@ -41,17 +38,4 @@ public class HomeController {
         service.deleteById(id);
         return "redirect:/home/menu";
     }
-
-//    @GetMapping("/manga/edit/{id}")
-//    public String showEdit(@PathVariable("id") Long id, Model model) {
-//        Manga manga = service.findById(id);
-//        model.addAttribute("get", manga);
-//        return "/home/edit-manga"; //Я не применю пока это так как пользователи не могут менять мангу
-//    }
-
-//    @PostMapping("/manga/edit/{id}")
-//    public String edit(@PathVariable("id") Long id, @ModelAttribute("manga") Manga manga) {
-//        service.update(id, manga);
-//        return "redirect:/home/menu";
-//    }
 }

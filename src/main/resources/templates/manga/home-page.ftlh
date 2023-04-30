@@ -55,14 +55,13 @@
             <div id="clock"></div>
         </li>
         <li>
-            <a href=""><button value="ADD"></button></a>
+            <a href="/manga/save"><button>ADD</button></a>
         </li>
     </ol>
 </div>
 <div>
     <#list page as go>
         <div>
-            <img src="Sasha.png" alt="">
             <div>
                 <a href="#"><p>Name: ${go.name}</p></a>
                 <a href="#"><p>Type: ${go.type}</p></a>
