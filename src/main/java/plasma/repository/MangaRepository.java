@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import plasma.model.Manga;
 
+import java.util.List;
+
 @Repository
-public interface HomeRepository extends JpaRepository<Manga, Long> {
+public interface MangaRepository extends JpaRepository<Manga, Long> {
 }

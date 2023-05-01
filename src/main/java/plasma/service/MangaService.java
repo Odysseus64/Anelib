@@ -3,7 +3,7 @@ package plasma.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import plasma.model.Manga;
-import plasma.repository.HomeRepository;
+import plasma.repository.MangaRepository;
 import plasma.service.meta.MangaMeta;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class MangaService implements MangaMeta {
-    private final HomeRepository service;
+    private final MangaRepository service;
 
     @Override
     public List<Manga> findAll() {

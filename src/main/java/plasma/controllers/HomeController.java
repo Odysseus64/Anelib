@@ -20,6 +20,12 @@ public class HomeController {
         model.addAttribute("page", manga);
         return "/manga/home-page";
     }
+    @GetMapping("/manga/more/info/")
+    public String more(Model model){
+        List<Manga> mangas = service.findAll();
+        model.addAttribute("manga", mangas);
+        return "/manga/manga-more-info";
+    }
 
     @GetMapping("/manga/save")
     public String save(Model model) {

@@ -62,12 +62,13 @@
 <div>
     <#list page as go>
         <div>
+            <img src="Sasha.jpg">
             <div>
-                <a href="#"><p>Name: ${go.name}</p></a>
-                <a href="#"><p>Type: ${go.type}</p></a>
-                <a href="#"><p>Desc: ${go.description}</p></a>
-                <a href="#"><p>Genre: ${go.genre}</p></a>
-                <a href="#"><p>More</p></a>
+                <h4>Name: ${go.name}</h4>
+                <h5>Type: ${go.type}</h5>
+                <h5>Desc: ${go.description}</h5>
+                <h5>Genre: ${go.genre}</h5>
+                <h5><a href="/manga/more/info/">More</a></h5>
             </div>
         </div>
     </#list>
