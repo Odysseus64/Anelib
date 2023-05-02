@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -55,23 +55,23 @@
             <div id="clock"></div>
         </li>
         <li>
-            <a href="/manga/save"><button>ADD</button></a>
+            <a href="/manga/save">
+                <button>ADD</button>
+            </a>
         </li>
     </ol>
 </div>
-<div>
-    <#list page as go>
+<div th:each="go : ${page}">
+    <div>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.64Rp5Re3Vm_Gx1QCVULT-wHaEo%26pid%3DApi&f=1&ipt=ce39db9468b086414fd50767aaf7398ad9992fe105178bc88f68a1442b5f0b43&ipo=images">
         <div>
-            <img src="Sasha.jpg">
-            <div>
-                <h4>Name: ${go.name}</h4>
-                <h5>Type: ${go.type}</h5>
-                <h5>Desc: ${go.description}</h5>
-                <h5>Genre: ${go.genre}</h5>
-                <h5><a href="/manga/more/info/">More</a></h5>
-            </div>
+            <h4 th:text="${go.name}"></h4>
+            <h5 th:text="${go.type}"></h5>
+            <h5 th:text="${go.description}"></h5>
+            <h5 th:text="${go.genre}"></h5>
+            <h5><a href="/manga/more/info/">More</a></h5>
         </div>
-    </#list>
+    </div>
 </div>
 </body>
 </html>
