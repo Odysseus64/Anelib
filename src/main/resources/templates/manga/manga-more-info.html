@@ -22,7 +22,8 @@
             <li><h4 th:text="${frame.description}"></h4></li>
         </ol>
     </div>
-    <form method="post" action="/manga/delete/" th:value="${frame.id}" th:id="${frame.id}">
+    <form method="post" action="#" th:action="@{'/manga/delete/' + ${frame.id}}">
+        <input type="hidden" name="delete" value="DELETE">
         <button type="submit">DELETE</button>
     </form>
     <a href="/home/menu">
