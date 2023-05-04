@@ -51,7 +51,7 @@
             </a>
         </li>
         <li>
-            <div id="clock"></div >
+            <div id="clock"></div>
         </li>
         <li>
             <a href="/manga/save">
@@ -74,10 +74,10 @@
             <li><h4 th:text="${frame.description}"></h4></li>
         </ol>
     </div>
-    <form method="post" th:action="@{'/manga/delete/' + ${frame.id}}">
+    <form method="post" th:action="@{/manga/delete/{id} (id = ${frame.id})}">
         <button type="submit">DELETE</button>
     </form>
-    <a th:href="@{'/manga/edit/' + ${frame.id}}">
+    <a th:href="@{/manga/edit/{id} (id = ${frame.id})}">
         <button>EDIT</button>
     </a>
 </div>
@@ -145,18 +145,20 @@
     #search-manga button[type="submit"] {
         width: 130px;
     }
-    img{
+
+    img {
         width: 272px;
         height: 170px;
     }
 
-    #card-text{
+    #card-text {
         background-color: #333;
         border-radius: 13px;
         margin-left: 290px;
         margin-top: -195px;
     }
-    #card-main{
+
+    #card-main {
         padding: 50px;
     }
 </style>
