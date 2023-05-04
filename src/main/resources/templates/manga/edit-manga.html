@@ -5,11 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="/clock.js"></script>
-    <title>Aneon</title>
+    <title>Edit Manga</title>
 </head>
 <body>
-<p></p>
 <div id="dashboard">
     <ol>
         <li>
@@ -34,7 +32,7 @@
             </a>
         </li>
         <li>
-            <a href="settings.html">
+            <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear"
                      viewBox="0 0 16 16">
                     <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
@@ -43,7 +41,7 @@
             </a>
         </li>
         <li>
-            <a href="profile.html">
+            <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                      class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -62,18 +60,17 @@
         </li>
     </ol>
 </div>
-<div th:each="go : ${page}">
-    <div id="card-main">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.64Rp5Re3Vm_Gx1QCVULT-wHaEo%26pid%3DApi&f=1&ipt=ce39db9468b086414fd50767aaf7398ad9992fe105178bc88f68a1442b5f0b43&ipo=images">
-        <div id="card-text">
-            <h4 th:text="${go.name}"></h4>
-            <h5 th:text="${go.type}"></h5>
-            <h5 th:text="${go.description}"></h5>
-            <h5 th:text="${go.genre}"></h5>
-            <h5><a href="/manga/find">More</a></h5>
-        </div>
-    </div>
-</div>
+<form method="post" th:action="@{'/manga/edit/' + ${frield.id}}">
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Description" name="description">
+    <input type="text" placeholder="Alter name" name="alter_name">
+    <input type="text" placeholder="Genre" name="genre">
+    <input type="text" placeholder="Date" name="date_of_appearance">
+    <input type="text" placeholder="Status" name="status">
+    <input type="text" placeholder="Author" name="author">
+    <input type="text" placeholder="Type" name="type">
+    <input type="submit">
+</form>
 </body>
 </html>
 <style>
@@ -137,29 +134,5 @@
 
     #search-manga button[type="submit"] {
         width: 130px;
-    }
-
-    #search-manga input[type="search"] {
-        width: calc(100% - 130px);
-        box-sizing: border-box;
-    }
-
-    #search-manga button[type="submit"] {
-        width: 130px;
-    }
-    img{
-        width: 272px;
-        height: 170px;
-        border-radius: 13px;
-    }
-    #card-text{
-        border-radius: 13px;
-        margin-left: 290px;
-        margin-top: -195px;
-    }
-    #card-main{
-        border-radius: 13px;
-        background-color: #333;
-        padding: 20px;
     }
 </style>

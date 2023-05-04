@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Manga</title>
 </head>
 <body>
 <div id="dashboard">
@@ -51,7 +51,7 @@
             </a>
         </li>
         <li>
-            <div id="clock"></div>
+            <div id="clock"></div >
         </li>
         <li>
             <a href="/manga/save">
@@ -62,7 +62,7 @@
 </div>
 <div th:each="frame : ${manga}">
     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.64Rp5Re3Vm_Gx1QCVULT-wHaEo%26pid%3DApi&f=1&ipt=ce39db9468b086414fd50767aaf7398ad9992fe105178bc88f68a1442b5f0b43&ipo=images">
-    <div>
+    <div id="card-text">
         <ol>
             <li><h2 th:text="${frame.name}"></h2></li>
             <li><h4 th:text="${frame.getAlter_name}"></h4></li>
@@ -77,6 +77,9 @@
     <form method="post" th:action="@{'/manga/delete/' + ${frame.id}}">
         <button type="submit">DELETE</button>
     </form>
+    <a th:href="@{'/manga/edit/' + ${frame.id}}">
+        <button>EDIT</button>
+    </a>
 </div>
 </body>
 </html>
@@ -141,5 +144,19 @@
 
     #search-manga button[type="submit"] {
         width: 130px;
+    }
+    img{
+        width: 272px;
+        height: 170px;
+    }
+
+    #card-text{
+        background-color: #333;
+        border-radius: 13px;
+        margin-left: 290px;
+        margin-top: -195px;
+    }
+    #card-main{
+        padding: 50px;
     }
 </style>
