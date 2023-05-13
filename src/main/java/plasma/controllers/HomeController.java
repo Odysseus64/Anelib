@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import plasma.model.Manga;
 import plasma.service.MangaService;
 
-import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -57,6 +56,11 @@ public class HomeController {
     @PostMapping("/manga/edit/{id}")
     public String edit(@PathVariable("id") Long id, @ModelAttribute("manga") Manga manga){
         service.update(id,manga);
+        return "redirect:/home/menu";
+    }
+    @GetMapping("/manga/findById/{id}")
+    public String findById(@PathVariable("id") Long id){
+        service.findById(id);
         return "redirect:/home/menu";
     }
 }
