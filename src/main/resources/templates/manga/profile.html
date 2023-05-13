@@ -57,8 +57,12 @@
         </li>
     </ol>
 </div>
-<div>
-
+<div th:each="jou : ${page}">
+    <p th:text="${jou.id}">Your ID: </p>
+    Edit name
+    <input th:value="${jou.user_name}">
+    Edit description
+    <input th:value="${jou.description}">
 </div>
 </body>
 </html>
