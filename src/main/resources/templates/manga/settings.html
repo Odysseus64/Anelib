@@ -57,8 +57,11 @@
         </li>
     </ol>
 </div>
-<div>
-    <input>
+<div th:each="view : ${set}">
+    <h4 th:text="${view.id}">Your ID: </h4>
+    <h3 th:text="${view.name}">Your email: </h3>
+    <input >
+    <input th:value="${view.name}" placeholder="Enter your name">
 </div>
 </body>
 </html>
