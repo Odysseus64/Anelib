@@ -36,6 +36,7 @@ public class SettingService implements SettingsMeta {
     public void update(Long id, Settings setting) {
         Settings state = service.findById(id).orElse(null);
         assert state != null;
+        state.setName(setting.getName());
         state.setEmail(setting.getEmail());
         state.setPassword(setting.getPassword());
         service.save(state);
