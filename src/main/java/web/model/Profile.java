@@ -1,4 +1,4 @@
-package plasma.model;
+package web.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

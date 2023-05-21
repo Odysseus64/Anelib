@@ -1,6 +1,6 @@
-package plasma.service.meta;
+package web.service.meta;
 
-import plasma.model.Settings;
+import web.model.Settings;
 
 import java.util.List;
 

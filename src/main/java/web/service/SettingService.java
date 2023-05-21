@@ -1,10 +1,10 @@
-package plasma.service;
+package web.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import plasma.model.Settings;
-import plasma.repository.SettingRepository;
-import plasma.service.meta.SettingsMeta;
+import web.model.Settings;
+import web.repository.SettingRepository;
+import web.service.meta.SettingsMeta;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package plasma.enums;
+package web.enums;
 
 public enum Info {
 
