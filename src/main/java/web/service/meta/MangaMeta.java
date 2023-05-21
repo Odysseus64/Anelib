@@ -1,6 +1,6 @@
-package plasma.service.meta;
+package web.service.meta;
 
-import plasma.model.Manga;
+import web.model.Manga;
 
 import java.util.List;
 

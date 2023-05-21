@@ -1,10 +1,10 @@
-package plasma.service;
+package web.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import plasma.model.Manga;
-import plasma.repository.MangaRepository;
-import plasma.service.meta.MangaMeta;
+import web.model.Manga;
+import web.repository.MangaRepository;
+import web.service.meta.MangaMeta;
 
 import java.util.List;
 
