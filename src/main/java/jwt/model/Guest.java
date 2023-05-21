@@ -1,4 +1,4 @@
 package jwt.model;
 
-public class User {
+public class Guest {
 }
