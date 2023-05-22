@@ -11,6 +11,7 @@ import web.model.Manga;
 import web.service.MangaService;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -49,7 +50,7 @@ public class HomeController {
     @GetMapping("/manga/edit/{id}")
     public String showEdit(@PathVariable("id") Long id, Model model){
         Manga manga = service.findById(id);
-        model.addAttribute("frield", manga);
+        model.addAttibute("frield", manga);
         return "/manga/edit-manga";
     }
 
